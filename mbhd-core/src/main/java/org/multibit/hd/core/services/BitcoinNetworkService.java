@@ -213,6 +213,7 @@ public class BitcoinNetworkService extends AbstractService {
   public void recalculateFastCatchupAndFilter() {
 
     if (peerGroup != null) {
+      peerGroup.setBloomFilterFalsePositiveRate(0.0005);
       peerGroup.recalculateFastCatchupAndFilter(PeerGroup.FilterRecalculateMode.FORCE_SEND_FOR_REFRESH);
     }
 
